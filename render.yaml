@@ -1,0 +1,16 @@
+services:
+  - type: web
+    runtime: static
+    name: whitekid-tech
+    buildCommand: echo "No build step needed"
+    staticPublishPath: ./public
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
